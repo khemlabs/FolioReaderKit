@@ -469,8 +469,9 @@ open class FolioReaderCenter: UIViewController, UICollectionViewDelegate, UIColl
         let cssTag = "<link rel=\"stylesheet\" type=\"text/css\" href=\"\(cssFilePath!)\">"
         let jsTag = "<script type=\"text/javascript\" src=\"\(jsFilePath!)\"></script>" +
         "<script type=\"text/javascript\">setMediaOverlayStyleColors(\(mediaOverlayStyleColors))</script>"
+        let metaTag = "<meta name=\"viewport\" content=\"width=320,user-scalable=no\" />"
 
-        let toInject = "\n\(cssTag)\n\(jsTag)\n</head>"
+        let toInject = "\n\(cssTag)\n\(jsTag)\n\(metaTag)\n</head>"
         html = html.replacingOccurrences(of: "</head>", with: toInject)
 
         // Font class name

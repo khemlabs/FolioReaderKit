@@ -37,13 +37,33 @@ open class FolioReaderWebView: UIWebView {
 
     init(frame: CGRect, readerContainer: FolioReaderContainer) {
         self.readerContainer = readerContainer
-
+        
         super.init(frame: frame)
+        self.scalesPageToFit = true
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    func updateSubviewsFramesWhenChangingFullscreen(isFullscreen: Bool) {
+//        self.webView.bounds = CGRectMake(0, 0, kWebAppWidth, kWebAppHeight)
+//        if (isFullscreen) {
+//        CGRect frame = self.view.frame
+//        // for some reason, the view has portrait's frame in landscape orientation
+//        // after reopening the app. so we set width to the bigger value
+//        CGSize correctSize
+//        correctSize.width = MAX(frame.size.width, frame.size.height)
+//        correctSize.height = MIN(frame.size.width, frame.size.height)
+//        frame.size = correctSize
+//        
+//        float scaleFactor = frame.size.width / kWebAppWidth
+//        self.webView.transform = CGAffineTransformMakeScale(scaleFactor, scaleFactor)
+//        } else {
+//            CGAffineTransform transform = CGAffineTransformIdentity
+//            self.webView.transform = transform
+//        }
+//    }
 
     // MARK: - UIMenuController
 

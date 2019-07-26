@@ -11,11 +11,11 @@ import FolioReaderKit
 
 enum Epub: Int {
     case bookOne = 0
-    case bookTwo
+    case bookTwo = 1
 
     var name: String {
         switch self {
-        case .bookOne:      return "The Silver Chair" // standard eBook
+        case .bookOne:      return "cenicienta" // standard eBook
         case .bookTwo:      return "The Adventures Of Sherlock Holmes - Adventure I" // audio-eBook
         }
     }

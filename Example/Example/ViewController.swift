@@ -28,7 +28,8 @@ class ViewController: UIViewController {
     private func readerConfiguration(forEpub epub: Epub) -> FolioReaderConfig {
         let config = FolioReaderConfig(withIdentifier: epub.readerIdentifier)
         config.shouldHideNavigationOnTap = epub.shouldHideNavigationOnTap
-        config.scrollDirection = epub.scrollDirection
+        config.scrollDirection = .vertical
+        config.canChangeScrollDirection = false
 
         // See more at FolioReaderConfig.swift
 //        config.canChangeScrollDirection = false
@@ -72,7 +73,7 @@ class ViewController: UIViewController {
             let epub = Epub(rawValue: index),
             let bookPath = epub.bookPath else {
                 return
-        }
+        } 
 
         do {
             let image = try FolioReader.getCoverImage(bookPath)
